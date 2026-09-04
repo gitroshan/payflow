@@ -1,0 +1,33 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: refund-dispute-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payflow_refund
+    username: payflow
+    password: payflow
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: refund-dispute-service
+
+payflow:
+  gateway:
+    base-url: http://localhost:8085
+  outbox:
+    poll-interval-ms: 1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
