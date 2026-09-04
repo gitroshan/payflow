@@ -211,3 +211,7 @@ tokenization/vaulting, CDC (Debezium) instead of the polling outbox relay,
 distributed tracing with correlation IDs, multi-currency FX and per-currency
 rounding, and three-way reconciliation against bank statements. Authentication,
 dead-letter handling, and a test harness are already included.
+
+## License
+
+Released under the [MIT License](LICENSE).
